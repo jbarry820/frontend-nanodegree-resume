@@ -178,20 +178,16 @@ var projects = {
 	  	"title": "Project 0: About Me",
 	  	"dates": "2015",
 	  	"description": "A simple first web page with a short bio about me.",
-	  	"images": [
-	  		"http://www.jimbarry.net/short_bio"
-	  	]
+	  	"url": "http://www.jimbarry.net/short_bio"
 	  },
 	  {
 	  	"title": "Project 1: Project 1: Build a Portfolio Site",
 	  	"dates": "2015",
 	  	"description": "A web site showing my portfolio.",
-	  	"images": [
-	  		"http://www.fostersbees.com"
-	  	]
+	  	"url": "http://www.fostersbees.com"
 	  }
 	]
-}
+};
 
 projects.display = function() {
 	for (project in projects.projects) {
@@ -215,8 +211,6 @@ projects.display = function() {
 	}
 }
 
-projects.display();
-
 var name = bio.name;
 var formattedName = HTMLheaderName.replace("%data%", name);
 
@@ -230,10 +224,7 @@ var email = bio.contactInfo.email;
 var formattedEmail = HTMLemail.replace("%data%", email);
 
 var github = bio.contactInfo.github;
-var formattedGithub = HTMLgithub.replace("%data%", github);
-
-var twitter = bio.contactInfo.twitter;
-var formattedTwitter = HTMLtwitter.replace("%data%", twitter);
+var formattedMobile = HTMLgithub.replace("%data%", github);
 
 var pictureUrl = bio.pictureUrl;
 var formattedPic = HTMLbioPic.replace("%data%", pictureUrl);
@@ -263,13 +254,9 @@ example();
 console.log(outsideExample); // "Second string"
 
 //-------------------
+
 $("#header").prepend(formattedWelcomeMsg);
 $("#header").prepend(formattedPic);
-$("#header").append(HTMLcontactsStart);
-$("#header").prepend(formattedMobile);
-$("#header").prepend(formattedEmail);
-$("#header").prepend(formattedGithub);
-$("#header").prepend(formattedTwitter);
 $("#header").prepend(formattedRole);
 $("#header").prepend(formattedName);
 $("#main").append(internationalizeButton);
@@ -278,8 +265,4 @@ $("#mapDiv").append(googleMap);
 
 
 
-// var name = "JB";
-// var formattedName = HTMLheaderName.replace("%data%", name);
 
-// $("#header").prepend(formattedName);
-//$("#header").append("jb");

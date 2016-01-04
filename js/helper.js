@@ -15,6 +15,7 @@ replace the %data% placeholder text you see in them.
 var HTMLheaderName = '<h1 id="name">%data%</h1>';
 var HTMLheaderRole = '<span>%data%</span><hr/>';
 
+var HTMLcontactsStart = '<h3 id="skills-h3"></h3><ul id="topContacts" class="flex-box"></ul>';
 var HTMLcontactGeneric = '<li class="flex-item"><span class="orange-text">%contact%</span><span class="white-text">%data%</span></li>';
 var HTMLmobile = '<li class="flex-item"><span class="orange-text">mobile</span><span class="white-text">%data%</span></li>';
 var HTMLemail = '<li class="flex-item"><span class="orange-text">email</span><span class="white-text">%data%</span></li>';
@@ -55,7 +56,7 @@ var HTMLonlineSchool = ' - %data%</a>';
 var HTMLonlineDates = '<div class="date-text">%data%</div>';
 var HTMLonlineURL = '<br><a href="#">%data%</a>';
 
-var internationalizeButton = '<button>Internationalize</button>';
+var internationalizeButton = '<button onclick="inName(bio.name)">Internationalize</button>';
 var googleMap = '<div id="map"></div>';
 
 
@@ -64,10 +65,24 @@ The International Name challenge in Lesson 2 where you'll create a function that
 */
 $(document).ready(function() {
   $('button').click(function() {
-    var iName = inName() || function(){};
-    $('#name').html(iName);  
+    var iName, name;
+
+    name = $('#name').html();
+    iName = inName(name) || function(){};
+
+    $('#name').html(iName);
   });
 });
+
+function inName(name) {
+  name = name.trim().split(" ");
+  console.log(name);
+  name[0] = name[0].slice(0,1).toUpperCase() + name[0].slice(1).toLowerCase();
+  name[1] = name[1].toUpperCase();
+  internationalName = name[0] + " " + name[1];
+  console.log(internationalName);
+  return name[0] + " "+name[1];
+}
 
 /*
 The next few lines about clicks are for the Collecting Click Locations quiz in Lesson 2.
@@ -86,6 +101,11 @@ function logClicks(x,y) {
 
 $(document).click(function(loc) {
   // your code goes here!
+  var x = loc.pageX;
+  var y = loc.pageY;
+
+  logClicks(x,y);
+
 });
 
 
@@ -109,9 +129,9 @@ function initializeMap() {
     disableDefaultUI: true
   };
 
-  /* 
+  /*
   For the map to be displayed, the googleMap var must be
-  appended to #mapDiv in resumeBuilder.js. 
+  appended to #mapDiv in resumeBuilder.js.
   */
   map = new google.maps.Map(document.querySelector('#map'), mapOptions);
 
