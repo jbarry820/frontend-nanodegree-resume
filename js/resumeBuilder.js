@@ -116,10 +116,10 @@ function displayWork() {
 		var formattedEmployer = HTMLworkEmployer.replace("%data%", work.jobs[job].employer);
 		var formattedTitle = HTMLworkTitle.replace("%data%", work.jobs[job].title);
 		var formattedEmployerTitle = formattedEmployer + formattedTitle;
-		$(".work-entry:last").append(formattedEmployerTitle);
 		var formattedDates = HTMLworkDates.replace("%data%", work.jobs[job].dates);
-		$(".work-entry:last").append(formattedDates);
 		var formattedDescription = HTMLworkDescription.replace("%data%", work.jobs[job].description);
+		$(".work-entry:last").append(formattedEmployerTitle);
+		$(".work-entry:last").append(formattedDates);
 		$(".work-entry:last").append(formattedDescription);
 	}
 }
@@ -134,14 +134,14 @@ var education = {
 		"city": "Orlando, FL, US",
 		"degree": "BA",
 		"major": "Psychology",
-		"year": 1974
+		"year": "1970 to 1974"
 	},
 	{
 		"name": "University of Alabama",
 		"city": "Tuscaloosa, AL, US",
 		"degree": "BS",
 		"major": "Mechanical Engineering",
-		"year": 1983
+		"year": "1979 to 1983"
 	}
 	],
 	"certifications": [
@@ -171,6 +171,44 @@ var education = {
 	}
 	]
 };
+
+function displayEducation() {
+	for (school in education.schools) {
+		$("#education").append(HTMLschoolStart);
+		var formattedSchoolName = HTMLschoolName.replace("%data%", education.schools[school].name);
+		var formattedDegree = HTMLschoolDegree.replace("%data%", education.schools[school].degree);
+		var formattedSchoolDates = HTMLschoolDates.replace("%data%", education.schools[school].year);
+		var formattedMajor = HTMLschoolMajor.replace("%data%", education.schools[school].major);
+		var formattedSchoolLocation = HTMLschoolLocation.replace("%data%", education.schools[school].city);
+		var formattedSchoolDegree = formattedSchoolName + formattedDegree;
+		$(".education-entry:last").append(formattedSchoolDegree);
+		$(".education-entry:last").append(formattedSchoolDates);
+		$(".education-entry:last").append(formattedMajor);
+		$(".education-entry:last").append(formattedSchoolLocation);
+	}
+
+	for (course in education.onlineCourses) {
+		$("#education").append(HTMLonlineClasses);
+		var formattedOnlineTitle = HTMLonlineTitle.replace("%data%", education.onlineCourses[course].title);
+		$(".education-entry:last").append(formattedOnlineTitle);
+		var formattedCertifiedSchool = HTMLonlineTitle.replace("%data%", education.onlineCourses[course].school);
+		$(".education-entry:last").append(formattedCertifiedSchool);
+	}
+}
+
+displayEducation();
+
+/*function displayOnlneCourses() {
+	$("#education").append(HTMLonlineClasses);
+	for (course in education.onlineCourses) {
+		var formattedOnlineTitle = HTMLonlineTitle.replace("%data%", education.onlineCourses[course].title);
+		$(".education-entry:last").append(formattedOnlineTitle);
+		var formattedCertifiedSchool = HTMLonlineTitle.replace("%data%", education.onlineCourses[course].school);
+		$(".education-entry:last").append(formattedCertifiedSchool);
+	}
+}
+
+displayOnlneCourses();*/
 
 var projects = {
 	"projects": [
@@ -265,11 +303,11 @@ console.log(outsideExample); // "Second string"
 //-------------------
 $("#header").prepend(formattedWelcomeMsg);
 $("#header").prepend(formattedPic);
-$("#header").append(HTMLcontactsStart);
-$("#header").prepend(formattedMobile);
-$("#header").prepend(formattedEmail);
-$("#header").prepend(formattedGithub);
-$("#header").prepend(formattedTwitter);
+$("#topContacts").append(HTMLcontactsStart);
+$("#topContacts").prepend(formattedMobile);
+$("#topContacts").prepend(formattedEmail);
+$("#topContacts").prepend(formattedGithub);
+$("#topContacts").prepend(formattedTwitter);
 $("#header").prepend(formattedRole);
 $("#header").prepend(formattedName);
 $("#main").append(internationalizeButton);
