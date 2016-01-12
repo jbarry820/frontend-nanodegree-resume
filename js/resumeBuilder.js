@@ -1,12 +1,12 @@
 var bio = {
 	"name": "Jim Barry",
 	"role": "Web Developer",
-	"contactInfo": {
+	"contacts": {
 		"mobile": "205-886-7517",
 		"email": "jb9449@att.com",
 		"github": "jbarry820",
 		"twitter": "jbarry820",
-		"location": "Cottondale, AL"
+		"contactlocation": "Cottondale, AL"
 	},
 	"welcomeMessage": "Welcome to Jim Barry's Resume.",
 	"pictureUrl": "images/Jim_picture.jpg",
@@ -29,12 +29,12 @@ if (bio.skills.length > 0) {
 var work = {
 	"jobs": [
 		{
-			"Department": "Service Order Center",
+			"Department": "Service Order Center, Desktop Design Team",
 			"title": "Designer",
 			"employer": "AT&T",
 			"dates": "Nov 2015 to Present",
 			"city": "Cottondale, AL",
-			"description": "fjkal;jftieqpvture9wvmturieqpnvhti"
+			"description": "This job involves the same thing as my previous job, but involved a larger geographical area of 5 southeastern states."
 
 		},
 		{
@@ -43,7 +43,7 @@ var work = {
 			"employer": "AT&T",
 			"dates": "December 2011 to Nov 2015",
 			"city": "Cottondale, AL",
-			"description": "fjkal;jftieqpvture9wvmturieqpnvhti"
+			"description": "In this job I was working with the AT&T televison servise called UVerse. When customers ordered UVerse service and there was not any cable or fiber to the customer, I had determine what was needed and have jobs designed accordingly."
 		},
 		{
 			"Department": "PLS Group",
@@ -51,7 +51,7 @@ var work = {
 			"employer": "AT&T",
 			"dates": "October 2010 to December 2011",
 			"city": "Cottondale, AL",
-			"description": "fjkal;jftieqpvture9wvmturieqpnvhti"
+			"description": "In this job I did quality checking on Project LightSpeed (PLS) engineering jobs that had been designed by contractors."
 		},
 		{
 			"Department": "Network Engineering",
@@ -59,7 +59,7 @@ var work = {
 			"employer": "AT&T",
 			"dates": "March 2008 to October 2010",
 			"city": "Cottondale, AL",
-			"description": "fjkal;jftieqpvture9wvmturieqpnvhti"
+			"description": "This job involved the day to day Business As Usual Outside Plant Engineering in AT&T."
 		},
 		{
 			"Department": "Network Engineering",
@@ -67,48 +67,48 @@ var work = {
 			"employer": "AT&T",
 			"dates": "2000 to March 2008",
 			"city": "Birmingham, AL",
-			"description": "fjkal;jftieqpvture9wvmturieqpnvhti"
+			"description": "This job was doing the same thing I did with EDS, except I was now employed by AT&T."
 		},
 		{
 			"title": "IT Support",
 			"employer": "EDS",
 			"dates": "1997 to 2000",
 			"city": "Birmingham, AL",
-			"description": "fjkal;jftieqpvture9wvmturieqpnvhti"
+			"description": "This job involved desktop support at BellSouth. This was software and hardware support in the Engineering area."
 		},
 		{
-			"title": "IT Support",
+			"title": "IT Desktop Support",
 			"employer": "Michelin Tire Corporation",
 			"dates": "1995 to 1997",
 			"city": "Tuscaloosa, AL",
-			"description": "fjkal;jftieqpvture9wvmturieqpnvhti"
+			"description": "This job involved everything that touched desktop users. I did everything including software support, wiring, networking and managing the switches."
 		},
 		{
 			"Department": "Engineering",
 			"title": "Engineer",
 			"employer": "Michelin Tire Corporation",
-			"dates": "1985 to 1995",
+			"dates": "1986 to 1995",
 			"city": "Tuscaloosa, AL",
-			"description": "fjkal;jftieqpvture9wvmturieqpnvhti"
+			"description": "As an Engineer in the tire plant, I designed and supervised various jobs involving equipment in the tire plant. Much of the design work involved CAD design using AutoCad."
 		},
 		{
 			"Department": "Production",
 			"title": "Tire Scheduler",
 			"employer": "Michelin Tire Corporation",
-			"dates": "1985 to 1995",
+			"dates": "1984 to 1986",
 			"city": "Tuscaloosa, AL",
-			"description": "fjkal;jftieqpvture9wvmturieqpnvhti"
+			"description": "As a Tire Scheduler I ordered material for the building of tires based on what tires were needed."
 		},
 		{
 			"Department": "Production",
 			"title": "Production Supervisor",
 			"employer": "Michelin Tire Corporation",
-			"dates": "1985 to 1995",
+			"dates": "1983 to 1984",
 			"city": "Tuscaloosa, AL",
-			"description": "fjkal;jftieqpvture9wvmturieqpnvhti"
+			"description": "As a Production Supervisor I supervised people in the building of tires."
 		}
 	]
-};
+}
 
 function displayWork() {
 	for (job in work.jobs) {
@@ -117,9 +117,11 @@ function displayWork() {
 		var formattedTitle = HTMLworkTitle.replace("%data%", work.jobs[job].title);
 		var formattedEmployerTitle = formattedEmployer + formattedTitle;
 		var formattedDates = HTMLworkDates.replace("%data%", work.jobs[job].dates);
+		var formattedWorkLocation = HTMLworkLocation.replace("%data%", work.jobs[job].city);
 		var formattedDescription = HTMLworkDescription.replace("%data%", work.jobs[job].description);
 		$(".work-entry:last").append(formattedEmployerTitle);
 		$(".work-entry:last").append(formattedDates);
+		$(".work-entry:last").append(formattedWorkLocation);
 		$(".work-entry:last").append(formattedDescription);
 	}
 }
@@ -131,14 +133,14 @@ var education = {
 	"schools": [
 	{
 		"name": "University of Central Florida",
-		"city": "Orlando, FL, US",
+		"location": "Orlando, FL, US",
 		"degree": "BA",
 		"major": "Psychology",
 		"year": "1970 to 1974"
 	},
 	{
 		"name": "University of Alabama",
-		"city": "Tuscaloosa, AL, US",
+		"location": "Tuscaloosa, AL, US",
 		"degree": "BS",
 		"major": "Mechanical Engineering",
 		"year": "1979 to 1983"
@@ -179,74 +181,81 @@ function displayEducation() {
 		var formattedDegree = HTMLschoolDegree.replace("%data%", education.schools[school].degree);
 		var formattedSchoolDates = HTMLschoolDates.replace("%data%", education.schools[school].year);
 		var formattedMajor = HTMLschoolMajor.replace("%data%", education.schools[school].major);
-		var formattedSchoolLocation = HTMLschoolLocation.replace("%data%", education.schools[school].city);
+		var formattedSchoolLocation = HTMLschoolLocation.replace("%data%", education.schools[school].location);
 		var formattedSchoolDegree = formattedSchoolName + formattedDegree;
 		$(".education-entry:last").append(formattedSchoolDegree);
 		$(".education-entry:last").append(formattedSchoolDates);
 		$(".education-entry:last").append(formattedMajor);
 		$(".education-entry:last").append(formattedSchoolLocation);
 	}
-
-	for (course in education.onlineCourses) {
-		$("#education").append(HTMLonlineClasses);
-		var formattedOnlineTitle = HTMLonlineTitle.replace("%data%", education.onlineCourses[course].title);
-		$(".education-entry:last").append(formattedOnlineTitle);
-		var formattedCertifiedSchool = HTMLonlineTitle.replace("%data%", education.onlineCourses[course].school);
-		$(".education-entry:last").append(formattedCertifiedSchool);
-	}
 }
 
 displayEducation();
 
-/*function displayOnlneCourses() {
+function displayOnlneCourses() {
 	$("#education").append(HTMLonlineClasses);
 	for (course in education.onlineCourses) {
+		$("#education").append(HTMLschoolStart);
 		var formattedOnlineTitle = HTMLonlineTitle.replace("%data%", education.onlineCourses[course].title);
-		$(".education-entry:last").append(formattedOnlineTitle);
-		var formattedCertifiedSchool = HTMLonlineTitle.replace("%data%", education.onlineCourses[course].school);
-		$(".education-entry:last").append(formattedCertifiedSchool);
+		var formattedCertifiedSchool = HTMLonlineSchool.replace("%data%", education.onlineCourses[course].school);
+		var formattedTitleSchool = formattedOnlineTitle + formattedCertifiedSchool;
+		$(".education-entry:last").append(formattedTitleSchool);
 	}
 }
 
-displayOnlneCourses();*/
+displayOnlneCourses();
+
+function displayCertifications() {
+	$("#education").append(HTMLCertification);
+	for (certification in education.certifications) {
+		$("#education").append(HTMLschoolStart);
+		var formattedCertificationTitle = HTMLCertificationTitle.replace("%data%", education.certifications[certification].certification);
+		var formattedCertifiedCompany = HTMLCertificationCompany.replace("%data%", education.certifications[certification].company);
+		var formattedCertAndCompany = formattedCertificationTitle + formattedCertifiedCompany;
+		$(".education-entry:last").append(formattedCertAndCompany);
+	}
+}
+
+displayCertifications();
 
 var projects = {
-	"projects": [
+	"designs": [
 	  {
-	  	"title": "Project 0: About Me",
-	  	"dates": "2015",
+	  	"title": "About Me",
+	  	"projectdates": "2015",
 	  	"description": "A simple first web page with a short bio about me.",
 	  	"images": [
-	  		"http://www.jimbarry.net/short_bio"
+	  		"images/BeeWebSite.jpg", "images/BeeWebSite.jpg"
 	  	]
 	  },
 	  {
-	  	"title": "Project 1: Project 1: Build a Portfolio Site",
-	  	"dates": "2015",
+	  	"title": "Build a Portfolio Site",
+	  	"projectdates": "2015",
 	  	"description": "A web site showing my portfolio.",
 	  	"images": [
-	  		"http://www.fostersbees.com"
+	  		"images/BeeWebSite.jpg", "images/BeeWebSite.jpg"
 	  	]
 	  }
 	]
 }
 
-projects.display = function() {
-	for (project in projects.projects) {
-		$("#projects").append(HTMLprojectStart);
+/*function displayProjects() {*/
 
-		var formattedTitle = HTMLprojectTitle.replace("%data%", projects.projects[project].title);
+projects.display = function() {
+	for (project in projects.designs) {
+		$("#projects").append(HTMLprojectStart);
+		var formattedTitle = HTMLprojectTitle.replace("%data%", projects.designs[project].title);
 		$(".project-entry:last").append(formattedTitle);
 
-		var formattedDates = HTMLprojectDates.replace("%data%", projects.projects[project].dates);
-		$("project-entry:last").append(formattedDates);
+		var formattedProjectDates = HTMLprojectDates.replace("%data%", projects.designs[project].projectdates);
+		$(".project-entry:last").append(formattedProjectDates);
 
-		var formattedDescription = HTMLprojectDescription.replace("%data%", projects.projects[project].description);
-		$("project-entry:last").append(formattedDescription);
+		var formattedProjectDescription = HTMLprojectDescription.replace("%data%", projects.designs[project].description);
+		$(".project-entry:last").append(formattedProjectDescription);
 
-		if (projects.projects[project].images.length > 0) {
-			for (image in projects.projects[project.images]) {
-				var formattedImage = HTMLprojectImage.replace("%data%", projects.projects[project].images[image]);
+		if (projects.designs[project].images.length > 0) {
+			for (image in projects.designs[project].images) {
+				var formattedImage = HTMLprojectImage.replace("%data%", projects.designs[project].images[image]);
 			$(".project-entry:last").append(formattedImage);
 			}
 		}
@@ -261,16 +270,19 @@ var formattedName = HTMLheaderName.replace("%data%", name);
 var role = bio.role;
 var formattedRole = HTMLheaderRole.replace("%data%", role);
 
-var mobile = bio.contactInfo.mobile;
+var presentlocation = bio.contacts.contactlocation;
+var formattedPresentLocation = HTMLlocation.replace("%data%", presentlocation);
+
+var mobile = bio.contacts.mobile;
 var formattedMobile = HTMLmobile.replace("%data%", mobile);
 
-var email = bio.contactInfo.email;
+var email = bio.contacts.email;
 var formattedEmail = HTMLemail.replace("%data%", email);
 
-var github = bio.contactInfo.github;
+var github = bio.contacts.github;
 var formattedGithub = HTMLgithub.replace("%data%", github);
 
-var twitter = bio.contactInfo.twitter;
+var twitter = bio.contacts.twitter;
 var formattedTwitter = HTMLtwitter.replace("%data%", twitter);
 
 var pictureUrl = bio.pictureUrl;
@@ -285,29 +297,14 @@ var employer = work.jobs[0].employer;
 var formattedEmployer = HTMLworkEmployer.replace("%data", employer);
 
 //-------------------
-
-var outsideExample = "First string";
-function example() {
-    var outsideExample = "Second string";
-}
-example();
-console.log(outsideExample); // "First string"
-
-var outsideExample = "First string";
-function example() {
-    outsideExample = "Second string";
-}
-example();
-console.log(outsideExample); // "Second string"
-
-//-------------------
 $("#header").prepend(formattedWelcomeMsg);
 $("#header").prepend(formattedPic);
 $("#topContacts").append(HTMLcontactsStart);
-$("#topContacts").prepend(formattedMobile);
-$("#topContacts").prepend(formattedEmail);
-$("#topContacts").prepend(formattedGithub);
+$("#topContacts").prepend(formattedPresentLocation);
 $("#topContacts").prepend(formattedTwitter);
+$("#topContacts").prepend(formattedGithub);
+$("#topContacts").prepend(formattedEmail);
+$("#topContacts").prepend(formattedMobile);
 $("#header").prepend(formattedRole);
 $("#header").prepend(formattedName);
 $("#main").append(internationalizeButton);

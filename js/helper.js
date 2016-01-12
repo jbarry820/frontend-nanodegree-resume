@@ -56,6 +56,12 @@ var HTMLonlineSchool = ' - %data%</a>';
 var HTMLonlineDates = '<div class="date-text">%data%</div>';
 var HTMLonlineURL = '<br><a href="#">%data%</a>';
 
+var HTMLCertification = '<h3>Certifications</h3>';
+var HTMLCertificationTitle = '<a href="#">%data%';
+var HTMLCertificationCompany = ' - %data%</a>';
+var HTMLCertificationDates = '<div class="date-text">%data%</div>';
+var HTMLCertificationURL = '<br><a href="#">%data%</a>';
+
 var internationalizeButton = '<button onclick="inName(bio.name)">Internationalize</button>';
 var googleMap = '<div id="map"></div>';
 
@@ -255,11 +261,11 @@ Uncomment the code below when you're ready to implement a Google Map!
 */
 
 // Calls the initializeMap() function when the page loads
-//window.addEventListener('load', initializeMap);
+window.addEventListener('load', initializeMap);
 
 // Vanilla JS way to listen for resizing of the window
 // and adjust map bounds
-//window.addEventListener('resize', function(e) {
+window.addEventListener('resize', function(e) {
   //Make sure the map bounds get updated on page resize
-//  map.fitBounds(mapBounds);
-//});
+  map.fitBounds(mapBounds);
+});
