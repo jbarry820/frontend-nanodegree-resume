@@ -6,7 +6,7 @@ var bio = {
 		"email": "jb9449@att.com",
 		"github": "jbarry820",
 		"twitter": "jbarry820",
-		"contactlocation": "Cottondale, AL"
+		"location": "Cottondale, AL"
 	},
 	"welcomeMessage": "Welcome to Jim Barry's Resume.",
 	"pictureUrl": "images/Jim_picture.jpg",
@@ -33,7 +33,7 @@ var work = {
 			"title": "Designer",
 			"employer": "AT&T",
 			"dates": "Nov 2015 to Present",
-			"city": "Cottondale, AL",
+			"location": "Cottondale, AL",
 			"description": "This job involves the same thing as my previous job, but involved a larger geographical area of 5 southeastern states."
 
 		},
@@ -42,7 +42,7 @@ var work = {
 			"title": "Service Order Manager",
 			"employer": "AT&T",
 			"dates": "December 2011 to Nov 2015",
-			"city": "Cottondale, AL",
+			"location": "Cottondale, AL",
 			"description": "In this job I was working with the AT&T televison servise called UVerse. When customers ordered UVerse service and there was not any cable or fiber to the customer, I had determine what was needed and have jobs designed accordingly."
 		},
 		{
@@ -50,7 +50,7 @@ var work = {
 			"title": "Quality Support",
 			"employer": "AT&T",
 			"dates": "October 2010 to December 2011",
-			"city": "Cottondale, AL",
+			"location": "Cottondale, AL",
 			"description": "In this job I did quality checking on Project LightSpeed (PLS) engineering jobs that had been designed by contractors."
 		},
 		{
@@ -58,7 +58,7 @@ var work = {
 			"title": "BAU Engineer",
 			"employer": "AT&T",
 			"dates": "March 2008 to October 2010",
-			"city": "Cottondale, AL",
+			"location": "Cottondale, AL",
 			"description": "This job involved the day to day Business As Usual Outside Plant Engineering in AT&T."
 		},
 		{
@@ -66,21 +66,21 @@ var work = {
 			"title": "Network Technical Manager",
 			"employer": "AT&T",
 			"dates": "2000 to March 2008",
-			"city": "Birmingham, AL",
+			"location": "Birmingham, AL",
 			"description": "This job was doing the same thing I did with EDS, except I was now employed by AT&T."
 		},
 		{
 			"title": "IT Support",
 			"employer": "EDS",
 			"dates": "1997 to 2000",
-			"city": "Birmingham, AL",
+			"location": "Birmingham, AL",
 			"description": "This job involved desktop support at BellSouth. This was software and hardware support in the Engineering area."
 		},
 		{
 			"title": "IT Desktop Support",
 			"employer": "Michelin Tire Corporation",
 			"dates": "1995 to 1997",
-			"city": "Tuscaloosa, AL",
+			"location": "Tuscaloosa, AL",
 			"description": "This job involved everything that touched desktop users. I did everything including software support, wiring, networking and managing the switches."
 		},
 		{
@@ -88,7 +88,7 @@ var work = {
 			"title": "Engineer",
 			"employer": "Michelin Tire Corporation",
 			"dates": "1986 to 1995",
-			"city": "Tuscaloosa, AL",
+			"location": "Tuscaloosa, AL",
 			"description": "As an Engineer in the tire plant, I designed and supervised various jobs involving equipment in the tire plant. Much of the design work involved CAD design using AutoCad."
 		},
 		{
@@ -96,7 +96,7 @@ var work = {
 			"title": "Tire Scheduler",
 			"employer": "Michelin Tire Corporation",
 			"dates": "1984 to 1986",
-			"city": "Tuscaloosa, AL",
+			"location": "Tuscaloosa, AL",
 			"description": "As a Tire Scheduler I ordered material for the building of tires based on what tires were needed."
 		},
 		{
@@ -104,7 +104,7 @@ var work = {
 			"title": "Production Supervisor",
 			"employer": "Michelin Tire Corporation",
 			"dates": "1983 to 1984",
-			"city": "Tuscaloosa, AL",
+			"location": "Tuscaloosa, AL",
 			"description": "As a Production Supervisor I supervised people in the building of tires."
 		}
 	]
@@ -117,7 +117,7 @@ function displayWork() {
 		var formattedTitle = HTMLworkTitle.replace("%data%", work.jobs[job].title);
 		var formattedEmployerTitle = formattedEmployer + formattedTitle;
 		var formattedDates = HTMLworkDates.replace("%data%", work.jobs[job].dates);
-		var formattedWorkLocation = HTMLworkLocation.replace("%data%", work.jobs[job].city);
+		var formattedWorkLocation = HTMLworkLocation.replace("%data%", work.jobs[job].location);
 		var formattedDescription = HTMLworkDescription.replace("%data%", work.jobs[job].description);
 		$(".work-entry:last").append(formattedEmployerTitle);
 		$(".work-entry:last").append(formattedDates);
@@ -136,26 +136,28 @@ var education = {
 		"location": "Orlando, FL, US",
 		"degree": "BA",
 		"major": "Psychology",
-		"year": "1970 to 1974"
+		"dates": "1970 to 1974"
 	},
 	{
 		"name": "University of Alabama",
 		"location": "Tuscaloosa, AL, US",
 		"degree": "BS",
 		"major": "Mechanical Engineering",
-		"year": "1979 to 1983"
+		"dates": "1979 to 1983"
 	}
 	],
 	"certifications": [
 	{
 		"company": "Novell",
         "certification": "Certified Novell Engineer",
-        "year": 1996
+        "date": 1996,
+        "url": "www.novell.com"
 	},
 	{
 		"company": "Microsoft",
 		"certification": "Microsoft Certified Systems Engineer",
-		"year": 1997
+		"date": 1997,
+		"url": "www.microsoft.com"
 	}
 	],
 	"onlineCourses": [
@@ -179,7 +181,7 @@ function displayEducation() {
 		$("#education").append(HTMLschoolStart);
 		var formattedSchoolName = HTMLschoolName.replace("%data%", education.schools[school].name);
 		var formattedDegree = HTMLschoolDegree.replace("%data%", education.schools[school].degree);
-		var formattedSchoolDates = HTMLschoolDates.replace("%data%", education.schools[school].year);
+		var formattedSchoolDates = HTMLschoolDates.replace("%data%", education.schools[school].dates);
 		var formattedMajor = HTMLschoolMajor.replace("%data%", education.schools[school].major);
 		var formattedSchoolLocation = HTMLschoolLocation.replace("%data%", education.schools[school].location);
 		var formattedSchoolDegree = formattedSchoolName + formattedDegree;
@@ -199,7 +201,9 @@ function displayOnlneCourses() {
 		var formattedOnlineTitle = HTMLonlineTitle.replace("%data%", education.onlineCourses[course].title);
 		var formattedCertifiedSchool = HTMLonlineSchool.replace("%data%", education.onlineCourses[course].school);
 		var formattedTitleSchool = formattedOnlineTitle + formattedCertifiedSchool;
+		var formattedOnlineDate = HTMLonlineDates.replace("%data%", education.onlineCourses[course].date);
 		$(".education-entry:last").append(formattedTitleSchool);
+		$(".education-entry:last").append(formattedOnlineDate);
 	}
 }
 
@@ -212,7 +216,10 @@ function displayCertifications() {
 		var formattedCertificationTitle = HTMLCertificationTitle.replace("%data%", education.certifications[certification].certification);
 		var formattedCertifiedCompany = HTMLCertificationCompany.replace("%data%", education.certifications[certification].company);
 		var formattedCertAndCompany = formattedCertificationTitle + formattedCertifiedCompany;
+		var formattedCertDate = HTMLCertificationDates.replace("%data%", education.certifications[certification].date);
+		var formattedCertUrl = HTMLCertificationURL.replace("%data%", education.certifications[certification].url);
 		$(".education-entry:last").append(formattedCertAndCompany);
+		$(".education-entry:last").append(formattedCertDate);
 	}
 }
 
@@ -225,7 +232,7 @@ var projects = {
 	  	"projectdates": "2015",
 	  	"description": "A simple first web page with a short bio about me.",
 	  	"images": [
-	  		"images/BeeWebSite.jpg", "images/BeeWebSite.jpg"
+	  		"images/apprentice.jpg"
 	  	]
 	  },
 	  {
@@ -233,29 +240,28 @@ var projects = {
 	  	"projectdates": "2015",
 	  	"description": "A web site showing my portfolio.",
 	  	"images": [
-	  		"images/BeeWebSite.jpg", "images/BeeWebSite.jpg"
+	  		"images/BeeWebSite.jpg"
 	  	]
 	  }
 	]
 }
 
-/*function displayProjects() {*/
-
 projects.display = function() {
-	for (project in projects.designs) {
+	var len = projects.designs.length;
+	for (var i = 0; i < len; i++) {
 		$("#projects").append(HTMLprojectStart);
-		var formattedTitle = HTMLprojectTitle.replace("%data%", projects.designs[project].title);
+		var formattedTitle = HTMLprojectTitle.replace("%data%", projects.designs[i].title);
 		$(".project-entry:last").append(formattedTitle);
 
-		var formattedProjectDates = HTMLprojectDates.replace("%data%", projects.designs[project].projectdates);
+		var formattedProjectDates = HTMLprojectDates.replace("%data%", projects.designs[i].projectdates);
 		$(".project-entry:last").append(formattedProjectDates);
 
-		var formattedProjectDescription = HTMLprojectDescription.replace("%data%", projects.designs[project].description);
+		var formattedProjectDescription = HTMLprojectDescription.replace("%data%", projects.designs[i].description);
 		$(".project-entry:last").append(formattedProjectDescription);
 
-		if (projects.designs[project].images.length > 0) {
-			for (image in projects.designs[project].images) {
-				var formattedImage = HTMLprojectImage.replace("%data%", projects.designs[project].images[image]);
+		if (projects.designs[i].images.length > 0) {
+			for (image in projects.designs[i].images) {
+				var formattedImage = HTMLprojectImage.replace("%data%", projects.designs[i].images[image]);
 			$(".project-entry:last").append(formattedImage);
 			}
 		}
@@ -270,7 +276,7 @@ var formattedName = HTMLheaderName.replace("%data%", name);
 var role = bio.role;
 var formattedRole = HTMLheaderRole.replace("%data%", role);
 
-var presentlocation = bio.contacts.contactlocation;
+var presentlocation = bio.contacts.location;
 var formattedPresentLocation = HTMLlocation.replace("%data%", presentlocation);
 
 var mobile = bio.contacts.mobile;
@@ -311,10 +317,3 @@ $("#main").append(internationalizeButton);
 
 $("#mapDiv").append(googleMap);
 
-
-
-// var name = "JB";
-// var formattedName = HTMLheaderName.replace("%data%", name);
-
-// $("#header").prepend(formattedName);
-//$("#header").append("jb");
