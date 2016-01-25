@@ -108,7 +108,7 @@ var work = {
 			"description": "As a Production Supervisor I supervised people in the building of tires."
 		}
 	]
-}
+};
 
 function displayWork() {
 	for (job in work.jobs) {
@@ -202,8 +202,10 @@ function displayOnlneCourses() {
 		var formattedCertifiedSchool = HTMLonlineSchool.replace("%data%", education.onlineCourses[course].school);
 		var formattedTitleSchool = formattedOnlineTitle + formattedCertifiedSchool;
 		var formattedOnlineDate = HTMLonlineDates.replace("%data%", education.onlineCourses[course].date);
+		var formattedOnlineURL = HTMLonlineURL.replace("%data%", education.onlineCourses[course].url);
 		$(".education-entry:last").append(formattedTitleSchool);
 		$(".education-entry:last").append(formattedOnlineDate);
+		$(".education-entry:last").append(formattedOnlineURL);
 	}
 }
 
@@ -220,6 +222,7 @@ function displayCertifications() {
 		var formattedCertUrl = HTMLCertificationURL.replace("%data%", education.certifications[certification].url);
 		$(".education-entry:last").append(formattedCertAndCompany);
 		$(".education-entry:last").append(formattedCertDate);
+		$(".education-entry:last").append(formattedCertUrl);
 	}
 }
 
@@ -244,7 +247,7 @@ var projects = {
 	  	]
 	  }
 	]
-}
+};
 
 projects.display = function() {
 	var len = projects.designs.length;
