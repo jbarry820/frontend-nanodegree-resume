@@ -153,14 +153,16 @@ function initializeMap() {
 
     // iterates through school locations and appends each location to
     // the locations array
-    for (var school in education.schools) {
-      locations.push(education.schools[school].location);
+    var lenSchools = education.schools.length;
+    for (var i = 0; i < lenSchools; i++) {
+      locations.push(education.schools[i].location);
     }
 
     // iterates through work locations and appends each location to
     // the locations array
-    for (var job in work.jobs) {
-      locations.push(work.jobs[job].location);
+    var lenJobs = work.jobs.length;
+      for (var j = 0; j < lenJobs; j++) {
+      locations.push(work.jobs[j].location);
     }
 
     return locations;
@@ -229,8 +231,9 @@ function initializeMap() {
     var service = new google.maps.places.PlacesService(map);
 
     // Iterates through the array of locations, creates a search object for each location
+    //var lenPlace = locations.place.length;
     for (var place in locations) {
-
+    //for (var k = 1; k < lenPlace; k++) {
       // the search request object
       var request = {
         query: locations[place]
